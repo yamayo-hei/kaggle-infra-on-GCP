@@ -1,0 +1,27 @@
+*.DS_Store
+input/
+output/
+working/
+*.csv
+*.xlsx
+*.gz
+*.pkl
+*~
+*.swp
+*.feather
+*.pyc
+*.pth
+*.npy
+*.txt
+*.tsv
+*.tfevents
+*.log
+*.parquet
+.virtual_documents
+#jupyter notebook
+.ipynb_checkpoints
+
+#terraform
+.terraform*
+terraform.tfstate*
+*.json
