@@ -10,7 +10,9 @@ variable "credentials" {
 
 # firewallに登録するアドレス
 variable "your_ip_address" {
-  default = "XXX.XXX.XXX.XXX/32"
+  default = [
+    "XXX.XXX.XXX.XXX/32"
+  ]
 }
 
 variable "region" {
