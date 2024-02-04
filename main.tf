@@ -126,6 +126,6 @@ resource "google_compute_firewall" "allow_jupyter_port" {
   direction     = "INGRESS"
   network       = google_compute_network.my_network.id
   priority      = 1000
-  source_ranges = [var.your_ip_address] # グローバルIPアドレスをセット
+  source_ranges = var.your_ip_address # グローバルIPアドレスをセット
   target_tags   = ["jupyter"]
 }
