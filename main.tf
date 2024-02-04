@@ -48,6 +48,7 @@ sudo timedatectl set-timezone Asia/Tokyo
 sudo apt update
 sudo apt upgrade
 sudo apt install git
+
 # dockerインストール
 ## 依存パッケージインストール
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
@@ -68,8 +69,18 @@ cd /usr/local/libexec/docker/cli-plugins
 sudo curl -L https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 -o docker-compose
 ## docker-composeを実行可能にする
 sudo chmod +x docker-compose
-# dockerへの権限付与
+## dockerへの権限付与
 sudo chmod 666 /var/run/docker.sock
+
+# Install Nvidia Container Runtime
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey |
+sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list |
+sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-runtime
+sudo apt install -y ubuntu-drivers-common
 EOF
 }
 

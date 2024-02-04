@@ -1,6 +1,7 @@
 # 0. Overview
 ### description of this repository
-This template is to create kaggle env on GCP.
+This repository is to create kaggle environment on GCP.
+notebook template working on GCP is here.()
 
 ### required applications
 |  application  |  version  |  confirmation command  |
@@ -20,10 +21,7 @@ This template is to create kaggle env on GCP.
 
 |  File path  |  Fixes  |
 | ----------- | ------- |
-|  docker/docker-compose.yml  |  fix container name.(default is _kaggle_)  |
-|  docker/docker-compose.yml  |  fix token value.(default is _kaggle-token_)  |
 |  README.md  |  put a value in the `{clone_url}`.  |
-|  README.md  |  put a value in the `{repository_name}`.  |
 |  README.md  |  put a value in the `{instance_name}`.  |
 |  README.md  |  put a value in the `{zone}`.  |
 
@@ -37,7 +35,7 @@ This template is to create kaggle env on GCP.
         - NVIDIA T4 GPUs
         - GPUs (all regions)
 3. In your local terminal
-    - change directory to {repository_name}/iac/
+    - change directory to kaggle-infra-on-GCP/
     - change each setting value in variable.tf
     - execute following command
        ```
@@ -65,32 +63,25 @@ This template is to create kaggle env on GCP.
        ```
        git clone {clone_url}
        ```
-    - [Install nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt)
     - Install nvidia driver
       ```
         ubuntu-drivers devices
         sudo apt -y install nvidia-driver-{recommended version}
         sudo reboot
       ```
-    - docker build (take more than one hour)
-      ```
-      cd {repository_name}/src
-      docker compose up --build
-      ```
 # 2. Start
 ### 2-1. Start VM Instance
 1. If the VM Instance is not ready, start the VM Instance in GCP.
-### 2-2. Open Jupyter
-2. Open following link In your browser.
-   - http://{IP address}:8888/lab?token=kaggle-token
-
 # 3. Shutdown
 ### 3-1. Shutdown VM Instance
 1. Stop the VM Instance in GCP.
 
-*************************************************************************************************************************
+# 4. Delete
+### 4-1. Delete all environment
+1. In your local terminal
+    - change directory to kaggle-infra-on-GCP/
+    - execute following command
+       ```
+       terraform destroy
+       ```
 
-# 4. Your work
-### 4-1. XXXXX
-### 4-2. XXXXX
-### 4-3. XXXXX
