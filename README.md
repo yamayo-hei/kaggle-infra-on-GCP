@@ -14,20 +14,7 @@ notebook template working on GCP is here.()
 # 1. Set up 
 **※This step is only first time**
 
-### 1-1. Advance preparation
-1. create a git repository from this repository template ([> How to create repository from template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template))
-2. clone to your local machine
-3. fix the following files
-
-|  File path  |  Fixes  |
-| ----------- | ------- |
-|  README.md  |  put a value in the `{clone_url}`.  |
-|  README.md  |  put a value in the `{instance_name}`.  |
-|  README.md  |  put a value in the `{zone}`.  |
-
-4. Push to remote
-
-### 1-2. Set up GCP VM Instance
+### 1-1. Set up GCP VM Instance
 1. If not exists, create your GCP account.
 2. In GCP
     - create service account key and download private key(json file).
